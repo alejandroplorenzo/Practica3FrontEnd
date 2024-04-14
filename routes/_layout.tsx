@@ -6,7 +6,6 @@ export default function Layout({ Component, state }: PageProps) {
       <div class="header">
         <a href="/registro">REGISTRO</a>
         <a href="/acceder">ACCEDER</a>
-        <a href="/comentar">COMENTAR</a>
       </div>
       <Component />
     </div>

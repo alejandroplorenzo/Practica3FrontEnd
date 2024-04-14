@@ -22,6 +22,11 @@
   .text-overflow {
     font-size: 0.8rem;
   }
+  /* Add your FilterPage styles here */
+  input[type="text"] {
+    width: 80%;
+    margin: 10px auto;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -38,6 +43,10 @@
   }
   .text-overflow {
     font-size: 1rem;
+  }
+  /* Add your FilterPage styles here */
+  input[type="text"] {
+    width: 60%;
   }
 }
 
@@ -59,6 +68,10 @@
   }
   .text-overflow {
     font-size: 1.2rem;
+  }
+  /* Add your FilterPage styles here */
+  input[type="text"] {
+    width: 30%;
   }
 }
 
@@ -139,7 +152,6 @@ body {
     text-align: center;
     margin-bottom: 0.25rem;
   }
-
   input{
     padding: 0.5rem;
     border: 1px solid #6b7280;
@@ -150,7 +162,6 @@ body {
       box-shadow: 0 0 5px rgba(107, 114, 128, 0.5);
     }
   }
-
   button{
     background-color: #6b7280;
     color: white;
@@ -164,11 +175,8 @@ body {
     }
   
   }
-
   .error {
-    color: red;
-    font-size: 0.8rem;
-    background-color: #f9f3f3;
+    color: red; font-size: 0.8rem; background-color: #f9f3f3;
   }
 }
 
@@ -211,13 +219,11 @@ body {
 }
 
 img.img-s {
-  width: 100px;
-  height: 100px;
+  width: 100px; height: 100px;
 }
 
 img.img-m {
-  width: 200px;
-  height: 200px;
+  width: 200px; height: 200px;
 }
 
 img.rounded {
@@ -229,16 +235,7 @@ img.half-rounded {
 }
 
 img.img-l {
-  width: 300px;
-  height: 300px;
-}
-
-.text-overflow {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-  text-align: center;
+  width: 300px;  height: 300px;
 }
 
 .botonname{

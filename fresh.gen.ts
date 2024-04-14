@@ -11,6 +11,7 @@ import * as $comentar from "./routes/comentar.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $menu from "./routes/menu.tsx";
 import * as $registro from "./routes/registro.tsx";
+import * as $search from "./routes/search.tsx";
 import * as $AccederManager from "./islands/AccederManager.tsx";
 import * as $RegistroManager from "./islands/RegistroManager.tsx";
 import * as $comentar_1 from "./islands/comentar.tsx";
@@ -27,6 +28,7 @@ const manifest = {
     "./routes/index.tsx": $index,
     "./routes/menu.tsx": $menu,
     "./routes/registro.tsx": $registro,
+    "./routes/search.tsx": $search,
   },
   islands: {
     "./islands/AccederManager.tsx": $AccederManager,

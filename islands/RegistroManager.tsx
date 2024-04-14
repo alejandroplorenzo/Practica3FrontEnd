@@ -1,4 +1,3 @@
-import { FunctionComponent } from "preact";
 import { useState } from "preact/hooks";
 import { uuid } from "https://deno.land/x/uuid@v0.1.2/v4.ts";
 import Axios from "npm:axios";
@@ -35,43 +34,6 @@ const RegistroManager = () => {
     return user.name.length > 0 && user.age.length > 0 && user.sex.length > 0 && user.description.length > 0 && user.hobbies.length > 0 && user.photo.length > 0;
   };
 
-// //   const addUser = async (user: User, users: User[]) => {
-// //     if (!validateContact(user, users)) {
-// //         setError("Usuario inválido. Algún campo no ha sido rellenado");
-// //         return;
-// //     }
-// //     try {
-// //       const response = await Axios.post('https://lovers.deno.dev/', {
-// //             name: user.name,
-// //             password: password,
-// //             age: Number(user.age), // Convertir la edad a número
-// //             sex: user.sex,
-// //             description: user.description,
-// //             hobbies: user.hobbies,
-// //             photo: user.photo,
-// //             comments: user.comments.map(comment => comment.message) // Enviar solo los mensajes de los comentarios
-// //       });
-// //       if (response.status !== 200) {
-// //         throw new Error("Error al enviar el usuario");
-// //       }    
-      
-// //         const newUser = { ...user, id: uuid() };
-// //         setUsers([...users, newUser]);
-// //         setUsuario('');
-// //         setPassword('');
-// //         setName('');
-// //         setAge('');
-// //         setSex('');
-// //         setDescription('');
-// //         setHobbies([]);
-// //         setPhoto('');
-// //         setComments([]);
-// //     } catch (error) {
-// //         console.error(error);
-// //     }
-// // };
-
-
 const addUser = async (user: User, users: User[]) => {
   if (!validateContact(user, users)) {
       setError("Usuario inválido. Algún campo no ha sido rellenado");
@@ -100,6 +62,7 @@ const addUser = async (user: User, users: User[]) => {
       if (!response.ok) {
           throw new Error("Error al enviar el usuario");
       }
+      window.location.href = "/menu";
 
       document.cookie = `username=${user.name}; path=/`;
       document.cookie = `password=${password}; path=/`;
@@ -119,11 +82,6 @@ const addUser = async (user: User, users: User[]) => {
       console.error(error);
   }
 };
-
-
-
-
-
 return (
     <>
       <div class="agendaForm">
@@ -207,14 +165,8 @@ return (
             setPassword(e.currentTarget.value);
           }}
         />
-
-        {/* <button onClick={() => addUser({name, age, sex, description, hobbies,photo, comments }, users)}>
-        Añadir Usuario
-        </button> */}
-
         <button onClick={() => {
           addUser({name, age, sex, description, hobbies,photo, comments }, users);
-          window.location.href = "/menu";
         }}>
           Añadir Usuario
         </button>
@@ -227,42 +179,3 @@ return (
 
 export default RegistroManager;
 
-// const RegistroManager: FunctionComponent = () => {
-//   const [name, setName] = useState<string>("");
-//   const [age, setAge] = useState<string>("");
-//   const [sex, setSex] = useState<string>("");
-//   const [description, setDescription] = useState<string>("");
-//   const [hobbies, setHobbies] = useState<string[]>([]);
-//   const [photo, setPhoto] = useState<string>("");
-//   const [comments, setComments] = useState<comment[]>([]);
-//   const [error, setError] = useState<string>("");
-//   const [users, setUsers] = useState<User[]>([]);
-//   const [usuario, setUsuario] = useState<string>("");
-//   const [password, setPassword] = useState<string>("");
-
-//   const response = await fetch('https://lovers.deno.dev/', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//         name: user.name,
-//         password: password,
-//         age: Number(user.age), // Convertir la edad a número
-//         sex: user.sex,
-//         description: user.description,
-//         hobbies: user.hobbies,
-//         photo: user.photo,
-//         comments: user.comments.map(comment => comment.message) // Enviar solo los mensajes de los comentarios
-//     })
-// });
-
-// const data = await response.json();
-
-
-
-
-
-// }
-
-// export default RegistroManager;

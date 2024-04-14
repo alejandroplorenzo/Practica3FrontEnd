@@ -28,6 +28,12 @@ const menu = async () => {
       return (
         <div class="flex-column">
           <h1 class="mainTitle">USUARIOS BUSCANDO AMOR</h1>
+          <a href="/search">
+          <button class="botonname">Ir a la página de filtros</button>
+          </a>
+          <a href="/comentar">
+          <button class="botonname">Hacer un comentario</button>
+          </a>
           <div class="flex-row flex-around">
             {response.data.map((char, id) => (
               <a href={`/${char.name}`}>
